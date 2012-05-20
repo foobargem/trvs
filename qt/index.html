@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>QT</title>
+  <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.8.20.custom.css" />
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
+  <script type="text/javascript" src="js/jquery.ui.datepicker-ko.js"></script>
+</head>
+<body>
+
+  <h1>생명의 삶 QT</h1>
+
+  <ul class="guide">
+    <li>날짜를 클릭하면 해당 날짜의 QT(생명의 삶) 페이지로 이동합니다.</li>
+  </ul>
+
+  <div id="datepicker">
+
+  <script>
+    var qt_url = 'http://www.duranno.com/qt/main/dailyQT.asp';
+    $(function(){
+      $('#datepicker').datepicker({
+        dateFormat: 'yy-mm-dd',
+        numberOfMonths: 2,
+        onSelect: function(date_text, foo) {
+          //console.log(date_text);
+          document.location.href = qt_url + '?qtDate=' + date_text;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
